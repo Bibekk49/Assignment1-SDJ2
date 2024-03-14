@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sem2.sdj2.assignment1Re.view.secondView.SecondViewController">
+    <children>
+        <SplitPane dividerPositions="0.29797979797979796" prefHeight="400.0" prefWidth="605.0">
+            <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="401.0" style="-fx-background-image: skyblue;">
+                    <children>
+                        <VBox alignment="CENTER" prefHeight="398.0" prefWidth="178.0" spacing="50.0">
+                            <children>
+                                <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#reserveVinyl" prefHeight="43.0" prefWidth="293.0" style="-fx-background-color: black;" text="Reserve" textAlignment="CENTER" textFill="WHITE">
+                                    <font>
+                                        <Font name="System Bold" size="20.0" />
+                                    </font>
+                                </Button>
+                                <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#borrowVinyl" prefHeight="43.0" prefWidth="293.0" style="-fx-background-color: black;" text="Borrow" textAlignment="CENTER" textFill="WHITE">
+                                    <font>
+                                        <Font name="System Bold" size="20.0" />
+                                    </font>
+                                </Button>
+                                <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#returnVinyl" prefHeight="43.0" prefWidth="293.0" style="-fx-background-color: black;" text="Return" textAlignment="CENTER" textFill="WHITE">
+                                    <font>
+                                        <Font name="System Bold" size="20.0" />
+                                    </font>
+                                </Button>
+                                <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#back" prefHeight="21.0" prefWidth="92.0" style="-fx-background-color: green;" text="Back" textAlignment="CENTER" textFill="WHITE">
+                                    <font>
+                                        <Font name="System Bold" size="20.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                        </VBox>
+                    </children>
+                </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="391.0">
+                    <children>
+                            <Label id="state" alignment="CENTER" contentDisplay="CENTER" layoutX="-1.0" layoutY="175.0" lineSpacing="20.0" prefHeight="170.0" prefWidth="421.0" text="Label" textFill="#e32409fc">
+                                <font>
+                                    <Font name="System Bold Italic" size="15.0" />
+                                </font>
+                                <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                </padding>
+                            </Label>
+                        <Label id="title" alignment="CENTER" contentDisplay="CENTER" layoutX="-1.0" prefHeight="58.0" prefWidth="422.0" style="-fx-background-color: black;" text="vinyl" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold Italic" size="20.0" />
+                            </font>
+                        </Label>
+                  <TextField id="name" layoutX="132.0" layoutY="67.0" prefHeight="43.0" prefWidth="274.0" style="-fx-background-color: #bcf2e0;" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="67.0" prefHeight="43.0" prefWidth="110.0" style="-fx-background-color: #0f9fdc;" text="Enter Your Name">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                        <Label layoutX="168.0" layoutY="132.0" text="Vinyl State">
+                            <font>
+                                <Font name="System Italic" size="18.0" />
+                            </font>
+                        </Label>
+                  <Label layoutX="-2.0" layoutY="339.0" prefHeight="58.0" prefWidth="422.0" style="-fx-background-color: black;" />
+                    </children>
+                </AnchorPane>
+            </items>
+        </SplitPane>
+    </children>
+
+</AnchorPane>

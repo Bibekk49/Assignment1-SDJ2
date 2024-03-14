@@ -27,21 +27,9 @@ public class ViewHandler {
     public void openMainView() {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("/sem2/main.fxml"));
-        System.out.println(loader.getLocation());
-
-// Add debugging code to test class loading
-        try {
-            Class<?> controllerClass = Class.forName("sem2.sdj2.assignment1Re.view.mainView.MainViewController");
-            System.out.println("Controller class found: " + controllerClass);
-        } catch (ClassNotFoundException e) {
-            System.out.println("Controller class not found!");
-        }
-
-// Try to load the root and controller
         try {
             Parent root = loader.load();
             MainViewController view = loader.getController();
-            System.out.println("Controller: " + view);
 
             if (view != null) {
                 view.init(viewModelFactory.getMainViewModel(), this);
@@ -50,8 +38,7 @@ public class ViewHandler {
                 Scene scene = new Scene(root);
                 stage.setScene(scene);
                 stage.show();
-            } else {
-                System.out.println("Controller is null after load.");
+                stage.setResizable(false);
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -60,20 +47,22 @@ public class ViewHandler {
 
     public void openSecondView() {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("../secondView/second.fxml"));
-        Parent root = null;
+        loader.setLocation(getClass().getResource("/sem2/second.fxml"));
         try {
-            root = loader.load();
+            Parent root = loader.load();
+            SecondViewController view = loader.getController();
+            if (view != null) {
+                view.init(viewModelFactory.getSecondViewModel(), this);
+                stage.setTitle("Vinyl Detail");
+
+                Scene scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
+                stage.setResizable(false);
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
-        SecondViewController view = loader.getController();
-        view.init(viewModelFactory.getSecondViewModel(), this);
-        stage.setTitle("");
-
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
     }
 
 }
