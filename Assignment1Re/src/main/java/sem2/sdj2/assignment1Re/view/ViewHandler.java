@@ -26,20 +26,36 @@ public class ViewHandler {
 
     public void openMainView() {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("../mainView/main.fxml"));
-        Parent root = null;
+        loader.setLocation(getClass().getResource("/sem2/main.fxml"));
+        System.out.println(loader.getLocation());
+
+// Add debugging code to test class loading
         try {
-            root = loader.load();
+            Class<?> controllerClass = Class.forName("sem2.sdj2.assignment1Re.view.mainView.MainViewController");
+            System.out.println("Controller class found: " + controllerClass);
+        } catch (ClassNotFoundException e) {
+            System.out.println("Controller class not found!");
+        }
+
+// Try to load the root and controller
+        try {
+            Parent root = loader.load();
+            MainViewController view = loader.getController();
+            System.out.println("Controller: " + view);
+
+            if (view != null) {
+                view.init(viewModelFactory.getMainViewModel(), this);
+                stage.setTitle("Vinyl List");
+
+                Scene scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
+            } else {
+                System.out.println("Controller is null after load.");
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
-        MainViewController view = loader.getController();
-        view.init(viewModelFactory.getMainViewModel(), this);
-        stage.setTitle("Vinyl List");
-
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
     }
 
     public void openSecondView() {
