@@ -18,6 +18,11 @@ public class VinylModelManager implements VinylModel {
     String artists[] = {"Aritist1", "Aritist2", "Aritist3", "Aritist4",
             "Aritist5", "Aritist6", "Aritist7", "Aritist8", "Aritist9", "Aritist10"};
 
+    public VinylModelManager() {
+        vinyls = new ArrayList<>();
+        initList();
+    }
+
     @Override
     public void reserveVinyl(Vinyl vinyl, String reserver) {
         vinyl.reserve(reserver);
@@ -71,7 +76,6 @@ public class VinylModelManager implements VinylModel {
     }
 
     private void initList() {
-        vinyls = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
             vinyls.add(new Vinyl(title[i % (title.length)], artists[i % (artists.length)], (2000 + (i * 2))));
         }

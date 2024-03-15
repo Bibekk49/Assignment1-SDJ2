@@ -28,11 +28,12 @@ public class MainViewController {
     public void init(MainViewModel model, ViewHandler viewHandler) {
         mainViewModel = model;
         this.viewHandler = viewHandler;
-        tableView.setItems(mainViewModel.getVinylList());
         title.setCellValueFactory(new PropertyValueFactory<>("title"));
         artist.setCellValueFactory(new PropertyValueFactory<>("artist"));
         year.setCellValueFactory(new PropertyValueFactory<>("year"));
-        state.setCellValueFactory(new PropertyValueFactory<>("vinylStateNameAsString"));
+        state.setCellValueFactory(new PropertyValueFactory<>("state"));
+        tableView.setItems(mainViewModel.getVinylList());
+        tableView.refresh();
     }
 
     private boolean vinylSelected() {

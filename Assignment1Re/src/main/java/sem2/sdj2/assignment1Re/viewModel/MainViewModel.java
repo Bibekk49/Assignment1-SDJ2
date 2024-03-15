@@ -17,6 +17,7 @@ public class MainViewModel {
         vinylList = FXCollections.observableArrayList();
         this.model = model;
         this.viewHandler = viewHandler;
+        vinylList.setAll(model.getAllVinyls());
         this.model.addListener("State Changed", this::stateChanged);
         this.model.addListener("Vinyl Removed", this::vinylRemoved);
     }
